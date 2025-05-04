@@ -28,7 +28,9 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         stack=[]
         res=[]
-
+        # only add open parenthesis if open < n
+        # only add close parenthesis if close < open
+        # valid if open == close == n
         def dfs (openB, closeB):
             if openB == closeB == n:
                 res.append("".join(stack))
